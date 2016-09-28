@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.kbsp.ShipwreckControllerWebIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 12.23 sec <<< FAILURE! - in com.kbsp.ShipwreckControllerWebIntegrationTests
+getList(com.kbsp.ShipwreckControllerWebIntegrationTests)  Time elapsed: 0.583 sec  <<< ERROR!
+org.springframework.web.client.HttpClientErrorException: 404 Not Found
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:91)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:641)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:597)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:557)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:289)
+	at com.kbsp.ShipwreckControllerWebIntegrationTests.getList(ShipwreckControllerWebIntegrationTests.java:31)
+

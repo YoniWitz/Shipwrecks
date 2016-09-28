@@ -1,0 +1,7 @@
+com\kbsp\controllers\ShipwreckController.class
+com\kbsp\controllers\HomeController.class
+com\kbsp\repositories\ShipwreckRepository.class
+com\kbsp\controllers\ShipwreckStub.class
+com\kbsp\config\PersistenceConfiguration.class
+com\kbsp\models\Shipwreck.class
+com\kbsp\App.class
