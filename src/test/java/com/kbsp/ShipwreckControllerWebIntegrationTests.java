@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 
-import javax.persistence.TableGenerator;
 import java.io.IOException;
 
 
