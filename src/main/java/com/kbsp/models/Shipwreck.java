@@ -1,7 +1,5 @@
 package com.kbsp.models;
 
-import java.math.BigInteger;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Shipwreck {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	BigInteger id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	Long id;
 	String name;
 	String description;
 	String condition;
@@ -22,7 +20,7 @@ public class Shipwreck {
 
 	public Shipwreck() { }
 
-	public Shipwreck(BigInteger id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
+	public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -33,11 +31,11 @@ public class Shipwreck {
 		this.yearDiscovered = yearDiscovered;
 	}
 
-	public BigInteger getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
