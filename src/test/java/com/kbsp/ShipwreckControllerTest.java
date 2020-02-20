@@ -11,6 +11,8 @@ import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.*;
 
+import java.math.BigInteger;
+
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.junit.Assert.assertEquals;
@@ -32,7 +34,7 @@ public class ShipwreckControllerTest {
     @Test
     public void GetShipwreckById(){
         Shipwreck sw = new Shipwreck();
-        sw.setId(1L);
+        sw.setId(BigInteger.valueOf(1));
         when(sc.get(1L)).thenReturn(sw);
 
         Shipwreck  newWreck = sc.get(1L);
