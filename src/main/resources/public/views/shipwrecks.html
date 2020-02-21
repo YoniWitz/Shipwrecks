@@ -1,9 +1,12 @@
 <div class="container pad-top">
   <a ui-sref="newShipwreck" class="btn-primary btn-lg nodecoration">Add New Shipwreck</a>
+  <h1>All Shipwrecks</h1>
   <table class="table shipwrecktable">
       <tr>
-          <td><h3>All Shipwrecks</h3></td>
-          <td></td>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Year Discovered</th>
+          <th>Action</th>
       </tr>
       <tr ng-repeat="shipwreck in shipwrecks">
           <td>{{shipwreck.name}}</td>

@@ -1,2 +1,0 @@
-insert into "SHIPWRECK" (ID, NAME, DESCRIPTION, CONDITION, DEPTH, LATITUDE, LONGITUDE, YEAR_DISCOVERED)
- values (1, 'Titanic', 'sunk', 'reck', 20, 20.0,20.0, 1998);
