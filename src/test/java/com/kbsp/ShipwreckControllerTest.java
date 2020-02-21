@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.*;
+
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.junit.Assert.assertEquals;
@@ -36,7 +37,7 @@ public class ShipwreckControllerTest {
 
         Shipwreck  newWreck = sc.get(1L);
 
-        verify(sr).findOne(1L);
+        verify(sr).findById(1L);
         assertEquals( newWreck.getId(), (Long) 1L);
         assertThat(newWreck.getId(), is(1l));
     }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by jhirshowitz on 6/9/2016.
@@ -24,7 +25,8 @@ public class ShipwreckController {
 
     @RequestMapping(value="shipwrecks/{id}", method= {RequestMethod.GET})
     public Shipwreck get(@PathVariable Long id){
-        return shipwreckRepository.findOne(id);
+    	Optional<Shipwreck> optionalShipwreck = shipwreckRepository.findById(id);
+    	return optionalShipwreck.get();
     }
 
     @RequestMapping(value="shipwrecks", method= {RequestMethod.POST})
@@ -34,16 +36,20 @@ public class ShipwreckController {
 
     @RequestMapping(value="shipwrecks/{id}", method= {RequestMethod.PUT})
     public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck){
-        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-        BeanUtils.copyProperties(shipwreck,existingShipwreck);
-        return shipwreckRepository.saveAndFlush(existingShipwreck);
+        Optional<Shipwreck> optionalShipwreck = shipwreckRepository.findById(id);
+        optionalShipwreck.ifPresent(existingShipwreck -> {  
+        	BeanUtils.copyProperties(shipwreck,existingShipwreck);
+        	shipwreckRepository.saveAndFlush(existingShipwreck);         	
+        });
+        return optionalShipwreck.get();
     }
 
     @RequestMapping(value="shipwrecks/{id}", method= {RequestMethod.DELETE})
     public Shipwreck delete(@PathVariable Long id){
-        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-        shipwreckRepository.delete(existingShipwreck);
-        return existingShipwreck;
+        Optional<Shipwreck> optionalShipwreck = shipwreckRepository.findById(id);
+        optionalShipwreck.ifPresent(shipwreck -> shipwreckRepository.delete(shipwreck));
+        
+        return optionalShipwreck.get();
     }
 
 }
